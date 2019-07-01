@@ -1,0 +1,20 @@
+#!/bin/python
+
+import subprocess
+
+dir_cmd = subprocess.check_output(['ls','-l'])
+
+print dir_cmd
+
+lines = dir_cmd.splitlines()
+
+
+for line in lines[1:]:
+    columns = line.split()
+    print(columns[8])  
+    with open(columns[8],'r') as f:
+        content = f.read()
+        print(content)
+
+
+len(columns)
